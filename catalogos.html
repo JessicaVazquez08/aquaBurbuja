@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/aquacollection.png">
+    <title> AquaBurbuja Collection </title>
+    <link rel="stylesheet" media="screen and (min-width: 1610px)" href="css/estilos.css"/> 
+    <link rel="stylesheet" media="screen and (min-width: 1001px) and (max-width: 1609px)"  href="css/estilosmedium.css">
+    <link rel="stylesheet" media="screen and (min-width: 180px) and (max-width: 1000px)" 
+    href="css/estilosmovil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbotn" alt=""> 
+          <i class="fa-solid fa-person-swimming" style="color: #281d29;"></i>
+          </label>
+          <a href="index.html" class="enlace" alt="">
+            <img class="logo" src="images/logoAqua.png" alt="redirecciona a index" />
+          </a>          
+          <ul class="nav__container">
+            <li class="nav__item">
+              <a class ="nav__link" href="index.html">Home</a>
+            </li>
+            <li class="nav__item">
+              <a class ="nav__link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav__item">
+              <a class ="nav__link" href="catalogos.html">Catalogo</a>
+            </li>
+            <li class="nav__item">
+              <a class ="nav__link" href="carrito.html">Carrito</a>
+            </li>
+            <li class="nav__item">
+              <a class ="nav__link" href="contacto.html">Contacto</a>
+            </li>
+         
+            <li class="buscador">
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text"  placeholder="Search" value="">
+              </div>
+            </li>
+          </ul>           
+        </nav>
+      </div>   
+    </header>
+    <section class="logos">
+        <h2>Puedes visitar el catalogo de la marca que mas prefieras</h2>
+        <img src="images/arena.svg" alt="Arena">
+        <img src="images/speedo.png" alt="Speedo">
+        <img src="images/finis.png" alt="Finis">
+        <img src="images/tyr.png" alt="TYR">
+        <img src="images/squalo.png" alt="Escualo">
+        <img src="images/nike.png" alt="Nike">
+    </section>
+     <!-- Carrusel con menú -->
+    <div class="carrusel-container">
+      <!-- Menú desplegable -->
+      <div class="filtro">
+          <h2>Articulos de Playa</h2>
+        <label for="categoria"></label>
+        <select id="categoria" onchange="filtrarProductos()">
+          <option value="todos">Todos</option>
+          <option value="ninos">Niños</option>
+          <option value="ninas">Niñas</option>
+          <option value="mujeres">Mujeres</option>
+          <option value="hombres">Hombres</option>
+        </select>      
+      </div>
+      
+      
+      <!-- Carrusel -->
+      <div class="carrusel" id="carrusel">
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 1', 'Traje de playa para niños 1', 'images/trajes de playa niño/trajeNiño.webp')">
+          <img src="images/trajes de playa niño/trajeNiño.webp" alt="Traje de playa para niños 1">
+          <p>Traje niños 1</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 1', 'Traje de baño para niñas 1', 'images/trajes de playa niña/trajeNiña.webp')">
+          <img src="images/trajes de playa niña/trajeNiña.webp" alt="Traje de baño para niñas 1">
+          <p>Traje niñas 1</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 1', 'Traje de playa para Mujer 1','images/trajes playa mujer/traje de baño mujer 8.webp')">
+          <img src="images/trajes playa mujer/traje de baño mujer 8.webp" alt="Traje Mujer 1">
+          <p>Traje Mujer 1</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 1', 'Aletas para mejorar técnica y velocidad.','images/trajes de playa hombres/traje de baño 1.webp')">
+          <img src="images/trajes de playa hombres/traje de baño 1.webp" alt="Traje Hombre 1">
+          <p>Traje Hombre 1</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 2', 'Gorro de silicón ultra resistente.','images/trajes de playa hombres/traje de baño 6.webp')">
+          <img src="images/trajes de playa hombres/traje de baño 6.webp" alt="Traje Hombre 2">
+          <p>Traje Hombre 2</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 2', 'Traje de playa para Mujer 2','images/trajes playa mujer/traje de baño playa 6.webp')">
+          <img src="images/trajes playa mujer/traje de baño playa 6.webp" alt="Traje Mujer 2">
+          <p>Traje Mujer 2</p>
+        </div>
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 2', 'Traje de playa para niños 2','images/trajes de playa niño/traje de baño niño playa 5.jpg')">
+          <img src="images/trajes de playa niño/traje de baño niño playa 5.jpg" alt="Traje niños 2">
+          <p>Traje niños 2</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 3', 'Paletas para entrenamiento de brazada.','images/trajes de playa hombres/traje de baño playa hombre 4.webp')">
+          <img src="images/trajes de playa hombres/traje de baño playa hombre 4.webp" alt="Traje Hombre 3">
+          <p>Traje Hombre 3</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 3', 'Traje de playa para Mujer 3','images/trajes playa mujer/traje de baño playa 7.webp')">
+          <img src="images/trajes playa mujer/traje de baño playa 7.webp" alt="Traje Mujer 3">
+          <p>Traje Mujer 3</p>
+        </div>
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 3', 'Traje de playa para niños 3','images/trajes de playa niño/traje de baño niño playa 8.avif')">
+          <img src="images/trajes de playa niño/traje de baño niño playa 8.avif" alt="Traje de playa para niños 3">
+          <p>Traje niños 3</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 4', 'Chaleco de flotación para principiantes.','images/trajes de playa hombres/traje de baño playa hombre 8.webp')">
+          <img src="images/trajes de playa hombres/traje de baño playa hombre 8.webp" alt="Traje Hombre 4">
+          <p>Traje Hombre 4</p>
+        </div>
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 4', 'Traje de playa para niños 4','images/trajes de playa niño/traje de baño niño playa 9.avif')">
+          <img src="images/trajes de playa niño/traje de baño niño playa 9.avif" alt="Traje de playa para niños 4">
+          <p>Traje niños 4</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 4', 'Traje de playa para Mujer 4','images/trajes playa mujer/traje playa mujer 5.webp')">
+          <img src="images/trajes playa mujer/traje playa mujer 5.webp" alt="Traje Mujer 4">
+          <p>Traje Mujer 4</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 5', 'Aletas para mejorar técnica y velocidad.','images/trajes de playa hombres/traje de baño playa hombre 9.webp')">
+          <img src="images/trajes de playa hombres/traje de baño playa hombre 9.webp" alt="Traje Hombre 5">
+          <p>Traje Hombre 5</p>
+        </div>
+        <div class="producto" data-cat="hombres" onclick="mostrarDetalles('Traje Hombre 6', 'Gorro de silicón ultra resistente.','images/trajes de playa hombres/traje de playa hombre 7.webp')">
+          <img src="images/trajes de playa hombres/traje de playa hombre 7.webp" alt="Traje Hombre 6">
+          <p>Traje Hombre 6</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 5', 'Traje de playa para Mujer 5','images/trajes playa mujer/traje playa mujer.webp')">
+          <img src="images/trajes playa mujer/traje playa mujer.webp" alt="Traje Mujer 5">
+          <p>Traje Mujer 5</p>
+        </div>
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 5', 'Traje de playa para niños 5','images/trajes de playa niño/traje de baño niño playa.avif')">
+          <img src="images/trajes de playa niño/traje de baño niño playa.avif" alt="Traje de playa para niños 5">
+          <p>Traje niños 5</p>
+        </div>
+        <div class="producto" data-cat="mujeres" onclick="mostrarDetalles('Traje Mujer 6', 'Traje de playa para Mujer 6','images/trajes playa mujer/traje playa mujer 2.webp')">
+          <img src="images/trajes playa mujer/traje playa mujer 2.webp" alt="Traje Mujer 6">
+          <p>Traje Mujer 6</p>
+        </div>
+        <div class="producto" data-cat="ninos" onclick="mostrarDetalles('Traje niños 6', 'Traje de playa para niños 6','images/trajes de playa niño/traje de baño niño.jpg')">
+          <img src="images/trajes de playa niño/traje de baño niño.jpg" alt="Traje de playa para niños 6">
+          <p>Traje niños 6</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 2', 'Traje de baño para niñas 2','images/trajes de playa niña/traje de baño niña playa 4.jpg')">
+          <img src="images/trajes de playa niña/traje de baño niña playa 4.jpg" alt="Traje de baño para niñas 2">
+          <p>Traje niñas 2</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 3', 'Traje de baño para niñas 3','images/trajes de playa niña/traje de baño niña playa 7.jpg')">
+          <img src="images/trajes de playa niña/traje de baño niña playa 7.jpg" alt="Traje de baño para niñas 3">
+          <p>Traje niñas 3</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 4', 'Traje de baño para niñas 4','images/trajes de playa niña/traje de baño niña playa 8.webp')">
+          <img src="images/trajes de playa niña/traje de baño niña playa 8.webp" alt="Traje de baño para niñas 4">
+          <p>Traje niñas 4</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 5', 'Traje de baño para niñas 5','images/trajes de playa niña/traje de baño niña playa 9.webp')">
+          <img src="images/trajes de playa niña/traje de baño niña playa 9.webp" alt="Traje de baño para niñas 5">
+          <p>Traje niñas 5</p>
+        </div>
+        <div class="producto" data-cat="ninas" onclick="mostrarDetalles('Traje Niñas 6', 'Traje de baño para niñas 6','images/trajes de playa niña/traje de baño niña playa.jpg')">
+          <img src="images/trajes de playa niña/traje de baño niña playa.jpg" alt="Traje de baño para niñas 6">
+          <p>Traje niñas 6</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detalles -->
+    <div class="detalles" id="detalles">
+      <h2>Selecciona un producto</h2>
+      <p>Selecciona un producto para visualizar sus detalles.</p>
+    </div>
+
+    <script>
+      function mostrarDetalles(nombre, descripcion, rutaImg) {
+        document.getElementById('detalles').innerHTML = `
+          <div class="detalles_img">
+            <img src="${rutaImg}">
+          </div>  
+          <div>
+            <h2>${nombre}</h2>
+            <p>${descripcion}</p>
+            
+            <div class="estrellas">★★★★★</div>
+
+            <div class="colores">
+              <h4>Colores disponibles:</h4>
+              <span>Azul</span>
+              <span>Negro</span>
+              <span>Rojo</span>
+              <span>Verde</span>
+            </div>
+
+            <div class="tallas">
+              <h4>Tallas disponibles:</h4>
+              <span>XS</span>
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+              <span>XL</span>
+            </div>
+
+            <div class="notas">
+              <p>🚚 Envíos gratis en compras mayores a $999 MXN</p>
+              <p>⏱ Tiempo de entrega: 3 - 5 días hábiles</p>
+              <p>💳 Hasta 6 MSI con tarjetas participantes</p>
+            </div>
+
+            <div class="botones">
+              <button class="carrito">🛒 Agregar al carrito</button>
+              <button class="comprar">💳 Comprar ahora</button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Filtro de productos
+      function filtrarProductos() {
+        const categoria = document.getElementById("categoria").value;
+        const productos = document.querySelectorAll(".producto");
+
+        productos.forEach(prod => {
+          if (categoria === "todos" || prod.dataset.cat === categoria) {
+            prod.style.display = "flex";
+          } else {
+            prod.style.display = "none";
+          }
+        });
+      }
+    </script>
+    <!-- Carrusel con menú -->
+    <div class="carrusel-container">
+      <!-- Menú desplegable -->
+      <div class="filtro">
+          <h2>Articulos de Entrenamiento</h2>         
+      </div>
+      
+      <div class="carrusel-container">
+        <!-- Carrusel -->
+      <div class="carrusel" id="carrusel">
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 1', 'Articulo de entrenamiento de natacion 1','images/articulos natacion/aletas.webp')">
+          <img src="images/articulos natacion/aletas.webp" alt="Articulo entrenamiento 1">
+          <p>Articulo entrenamiento 1</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 2', 'Articulo de entrenamiento de natacion 2','images/articulos natacion/aletas speedo.jpg')">
+          <img src="images/articulos natacion/aletas speedo.jpg" alt="Articulo entrenamiento 2">
+          <p>Articulo entrenamiento 2</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 3', 'Articulo de entrenamiento de natacion 3','images/articulos natacion/aletas-nadar-monoaletas.jpg')">
+          <img src="images/articulos natacion/aletas-nadar-monoaletas.jpg" alt="Articulo entrenamiento 3">
+          <p>Articulo entrenamiento 3</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 4', 'Articulo de entrenamiento de natacion 4','images/articulos natacion/arena goggle.jpg')">
+          <img src="images/articulos natacion/arena goggle.jpg" alt="Articulo entrenamiento 4">
+          <p>Articulo entrenamiento 4</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 5', 'Articulo de entrenamiento de natacion 5','images/articulos natacion/arena goggle.webp')">
+          <img src="images/articulos natacion/arena goggle.webp" alt="Articulo entrenamiento 5">
+          <p>Articulo entrenamiento 5</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 6', 'Articulo de entrenamiento de natacion 6','images/articulos natacion/arena goggle2.jpg')">
+          <img src="images/articulos natacion/arena goggle2.jpg" alt="Articulo entrenamiento 6">
+          <p>Articulo entrenamiento 6</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 7', 'Articulo de entrenamiento de natacion 7','images/articulos natacion/arena.jpg')">
+          <img src="images/articulos natacion/arena.jpg" alt="Articulo entrenamiento 7">
+          <p>Articulo entrenamiento 7</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 8', 'Articulo de entrenamiento de natacion 8','images/articulos natacion/finis-pullboy-jr-e1652710527981.jpg')">
+          <img src="images/articulos natacion/finis-pullboy-jr-e1652710527981.jpg" alt="Articulo entrenamiento 8">
+          <p>Articulo entrenamiento 8</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 9', 'Articulo de entrenamiento de natacion 9','images/articulos natacion/flotador.avif')">
+          <img src="images/articulos natacion/flotador.avif" alt="Articulo entrenamiento 9">
+          <p>Articulo entrenamiento 9</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 10', 'Articulo de entrenamiento de natacion 10','images/articulos natacion/gogglea.jpg')">
+          <img src="images/articulos natacion/gogglea.jpg" alt="Articulo entrenamiento 10">
+          <p>Articulo entrenamiento 10</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 11', 'Articulo de entrenamiento de natacion 11','images/articulos natacion/gogglenike.jpg')">
+          <img src="images/articulos natacion/gogglenike.jpg" alt="Articulo entrenamiento 11">
+          <p>Articulo entrenamiento 11</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 12', 'Articulo de entrenamiento de natacion 12','images/articulos natacion/gorra 1.webp')">
+          <img src="images/articulos natacion/gorra 1.webp" alt="Articulo entrenamiento 12">
+          <p>Articulo entrenamiento 12</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 13', 'Articulo de entrenamiento de natacion 13','images/articulos natacion/gorra arenaq.jpg')">
+          <img src="images/articulos natacion/gorra arenaq.jpg" alt="Articulo entrenamiento 13">
+          <p>Articulo entrenamiento 13</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 14', 'Articulo de entrenamiento de natacion 14','images/articulos natacion/gorra tela.webp')">
+          <img src="images/articulos natacion/gorra tela.webp" alt="Articulo entrenamiento 14">
+          <p>Articulo entrenamiento 14</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 15', 'Articulo de entrenamiento de natacion 15','images/articulos natacion/gorra voit.jpg')">
+          <img src="images/articulos natacion/gorra voit.jpg" alt="Articulo entrenamiento 15">
+          <p>Articulo entrenamiento 15</p>
+        </div>
+        <div class="producto" onclick="mostrarDetallesEntrenamiento('Articulo entrenamiento 16', 'Articulo de entrenamiento de natacion 1','images/articulos natacion/gorra.webp')">
+          <img src="images/articulos natacion/gorra.webp" alt="Articulo entrenamiento 16">
+          <p>Articulo entrenamiento 16</p>
+        </div>
+        
+       
+      </div>
+    </div>
+
+    <!-- Detalles -->
+    <div class="detalles" id="detalles_entrenamiento">
+      <h2>Selecciona un producto</h2>
+      <p>Selecciona un producto para visualizar sus detalles.</p>
+    </div>
+
+    <script>
+      function mostrarDetallesEntrenamiento(nombre, descripcion, rutaImg) {
+        document.getElementById('detalles_entrenamiento').innerHTML = `
+          <div class="detalles_img">
+            <img src="${rutaImg}">
+          </div>  
+          <div>
+            <h2>${nombre}</h2>
+            <p>${descripcion}</p>
+            
+            <div class="estrellas">★★★★★</div>
+
+            <div class="colores">
+              <h4>Colores disponibles:</h4>
+              <span>Azul</span>
+              <span>Negro</span>
+              <span>Rojo</span>
+              <span>Verde</span>
+            </div>
+
+            <div class="tallas">
+              <h4>Tallas disponibles:</h4>
+              <span>XS</span>
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+              <span>XL</span>
+            </div>
+
+            <div class="notas">
+              <p>🚚 Envíos gratis en compras mayores a $999 MXN</p>
+              <p>⏱ Tiempo de entrega: 3 - 5 días hábiles</p>
+              <p>💳 Hasta 6 MSI con tarjetas participantes</p>
+            </div>
+
+            <div class="botones">
+              <button class="carrito">🛒 Agregar al carrito</button>
+              <button class="comprar">💳 Comprar ahora</button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Filtro de productos
+      function filtrarProductosEntrenamiento() {
+        const categoria = document.getElementById("categoria").value;
+        const productos = document.querySelectorAll(".producto");
+
+        productos.forEach(prod => {
+          if (categoria === "todos" || prod.dataset.cat === categoria) {
+            prod.style.display = "flex";
+          } else {
+            prod.style.display = "none";
+          }
+        });
+      }
+    </script>
+      </div>
+      
+    <footer>
+      <ul>
+        <li>Vazquez Morales Jessica Kimberly</li>
+        <li>
+          <a href="mailto:jessicavzqz08@gmail">Enviar correo</a>          
+        </li>   
+        <li>Algunas imagenes fueron tomadas de las siguientes paginas: https://pixabay.com/es/, https://www.pexels.com/       
+        </li>     
+      </ul>
+    </footer>
+  </body>
+</html>
