@@ -37,11 +37,10 @@ h1 {
 ======================= */
 
 .cart-items {
-  flex: 2;
   background: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .cart-item {
@@ -114,7 +113,7 @@ h1 {
   background: #ffffff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   width: 100%;
 }
 
@@ -162,26 +161,20 @@ h1 {
    RESPONSIVE
 ======================= */
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
 
-  .cart-content {
-    flex-direction: column;
-  }
-
-  .cart-item {
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    gap: 10px;
-  }
-
-  .item-price,
-  .item-quantity,
-  .item-total,
-  .remove-btn {
-    grid-column: span 2;
+  .cart-items {
+    flex: 2;
   }
 
   .cart-summary {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-item {
+    display: block;
+    text-align: center;
   }
 }
