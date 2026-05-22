@@ -99,6 +99,10 @@ header div {
 section {
   display: inline-block;
   width: 100%;
+
+  img{
+    width: 100%;
+  }
 }
 
 
@@ -471,11 +475,16 @@ article p {
 
 /* --- Detalles del producto --- */
 .detalles {
+  width: 100%;
   padding: 30px;
   background: white;
   border-top: 2px solid #004080;
   min-height: 300px;
   display: inline-flex;
+
+  h2 {
+    width: 100%;
+  }
 }
 
 .detalles_img {
